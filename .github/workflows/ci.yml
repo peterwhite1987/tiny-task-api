@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "CI is working for tiny-task-api!"
