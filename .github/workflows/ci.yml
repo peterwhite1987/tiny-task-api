@@ -17,5 +17,5 @@ jobs:
         run: pip install -r requirements.txt
 
 
-      - name: Say hello
-        run: echo "CI is working for tiny-task-api!"
+      - name: Run tests
+        run: pytest
