@@ -13,5 +13,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+
       - name: Say hello
         run: echo "CI is working for tiny-task-api!"
