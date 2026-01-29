@@ -26,3 +26,7 @@ jobs:
       - name: Run tests
         run: python -m pytest
 
+      - name: Simulated deployment
+        run: echo "Deployment is ready"
+
+
