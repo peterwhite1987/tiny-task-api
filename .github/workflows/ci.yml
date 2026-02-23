@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   ci:
@@ -26,7 +29,9 @@ jobs:
       - name: Run tests
         run: python -m pytest
 
-      - name: Simulated deployment
-        run: echo "Deployment is ready"
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
+      - name: Build Docker image
+        run: docker build -t lightweight-ci-cd:${{ github.sha }} .
 
